@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/miguel/alemanmig_git/Verification-/FSM-Project/tb
+vtb
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1760627343
+!i10b 1
+!s100 Ec@1=h[]CSnaG7lhUBfJM3
+IUifSN3Yn06A6m3k]W=zbz2
+S1
+R0
+w1760627213
+8tb.sv
+Ftb.sv
+!i122 0
+L0 8 111
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2_1;73
+r1
+!s85 0
+31
+!s108 1760627343.000000
+!s107 tb.sv|
+!s90 tb.sv|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0
