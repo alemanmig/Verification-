@@ -1,0 +1,71 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/miguel/alemanmig_git/Verification-/FSM-Project/sim
+T_opt
+!s110 1760630136
+Vc=6nDgVdK3m7nmaj1G5KV3
+04 2 4 work tb fast 0
+=1-000ae431a4f1-68f11578-9d78-32d2
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2_1;73
+vfsm
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1760630135
+!i10b 1
+!s100 Ne:V8KTCS4W_?c0hh3j=d2
+I?3Vnh]z]m8iT^Kj8WW<z:2
+S1
+R0
+w1760627167
+8../rtl/fsm.sv
+F../rtl/fsm.sv
+!i122 0
+L0 8 74
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z6 !s108 1760630135.000000
+!s107 ../rtl/fsm.sv|
+!s90 -reportprogress|300|-cover|bcest|../rtl/fsm.sv|
+!i113 0
+!s102 -cover bcest
+o-cover bcest -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtb
+R2
+R3
+!i10b 1
+!s100 Ec@1=h[]CSnaG7lhUBfJM3
+IUT8Ak@=P;OMo58MMMK8_i1
+S1
+R0
+w1760627213
+8../tb/tb.sv
+F../tb/tb.sv
+!i122 1
+L0 8 111
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../tb/tb.sv|
+!s90 -reportprogress|300|../tb/tb.sv|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
