@@ -5,6 +5,7 @@ vlib work
 vlog -cover bcest ../rtl/fsm.sv
 
 #Compile TB
+vlog ../tb/fsm_property.sv
 vlog ../tb/tb.sv
 
 vsim tb -coverage -do "wave.do"

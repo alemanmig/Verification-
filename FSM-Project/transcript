@@ -12,268 +12,501 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+cd sim
+do run.do
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 18:45:14 on Oct 16,2025
+# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
+# -- Compiling module fsm
+# 
+# Top level modules:
+# 	fsm
+# End time: 18:45:14 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 18:45:14 on Oct 16,2025
+# vlog -reportprogress 300 ../tb/fsm_property.sv 
+# -- Compiling module fsm_property
+# 
+# Top level modules:
+# 	fsm_property
+# End time: 18:45:14 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 18:45:14 on Oct 16,2025
+# vlog -reportprogress 300 ../tb/tb.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:45:14 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim tb -coverage -do "wave.do" 
+# Start time: 18:45:14 on Oct 16,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.fsm(fast)
+# Loading work.fsm_property(fast)
+# do wave.do
+# 1
+# Inicio de simulación
+# Time=5000 | rst=1 din=0 dout=0
+# ** Error: FSM no entra en 'idle' tras reset
+#    Time: 5 ns Started: 5 ns  Scope: tb.dut.fsm_bind_inst File: ../tb/fsm_property.sv Line: 16
+# Time=15000 | rst=0 din=0 dout=0
+# Time=25000 | rst=0 din=0 dout=0
+# Time=35000 | rst=0 din=1 dout=0
+# Time=45000 | rst=0 din=1 dout=1
+# Time=55000 | rst=0 din=0 dout=0
+# Time=65000 | rst=0 din=1 dout=0
+# Time=75000 | rst=0 din=0 dout=0
+# Time=85000 | rst=0 din=1 dout=1
+# Time=95000 | rst=0 din=1 dout=0
+# ** Note: $finish    : ../tb/tb.sv(69)
+#    Time: 105 ns  Iteration: 0  Instance: /tb
+# 1
+# Break at ../tb/tb.sv line 69
+# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
+# Start time: 18:45:24 on Oct 16,2025
+# vcover report fsm.ucdb 
+# Coverage Report Summary Data by instance
+# 
+# =================================================================================
+# === Instance: /tb/dut/fsm_bind_inst
+# === Design Unit: work.fsm_property
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Assertions                       5         4         1    80.00%
+# 
+# =================================================================================
+# === Instance: /tb/dut
+# === Design Unit: work.fsm
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Branches                        12        11         1    91.66%
+#     Statements                      19        18         1    94.73%
+#     Toggles                         14        12         2    85.71%
+# 
+# =================================================================================
+# === Instance: /tb
+# === Design Unit: work.tb
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Covergroups                      1        na        na    91.41%
+#         Coverpoints/Crosses         11        na        na        na
+#             Covergroup Bins         43        36         7    83.72%
+# 
+# 
+# TOTAL COVERGROUP COVERAGE: 91.41%  COVERGROUP TYPES: 1
+# 
+# TOTAL ASSERTION COVERAGE: 80.00%  ASSERTIONS: 5
+# 
+# Total Coverage By Instance (filtered view): 88.70%
+# 
+# End time: 18:45:24 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
+# Start time: 18:45:24 on Oct 16,2025
+# vcover report fsm.ucdb -cvg -details 
+# Coverage Report by instance with details
+# 
+# =================================================================================
+# === Instance: /tb
+# === Design Unit: work.tb
+# =================================================================================
+# 
+# Covergroup Coverage:
+#     Covergroups                      1        na        na    91.41%
+#         Coverpoints/Crosses         11        na        na        na
+#             Covergroup Bins         43        36         7    83.72%
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /tb/cg_fsm                                       91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#  Covergroup instance \/tb/fsm_cov                      91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin idle                                            1          1          -    Covered              
+#         bin s0                                              5          1          -    Covered              
+#         bin s1                                              3          1          -    Covered              
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin zero                                            5          1          -    Covered              
+#         bin one                                             5          1          -    Covered              
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin to_idle                                         1          1          -    Covered              
+#         bin to_s0                                           5          1          -    Covered              
+#         bin to_s1                                           4          1          -    Covered              
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin dout_0                                          8          1          -    Covered              
+#         bin dout_1                                          2          1          -    Covered              
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        4          1          -    Covered              
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],one>                              2          1          -    Covered              
+#             bin <auto[s0],one>                              3          1          -    Covered              
+#             bin <auto[s1],zero>                             1          1          -    Covered              
+#             bin <auto[s0],zero>                             2          1          -    Covered              
+#             bin <auto[idle],zero>                           1          1          -    Covered              
+#             bin <auto[idle],one>                            0          1          1    ZERO                 
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],auto[s1]>                         1          1          -    Covered              
+#             bin <auto[s0],auto[s1]>                         3          1          -    Covered              
+#             bin <auto[s1],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[s0],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[idle],auto[s0]>                       1          1          -    Covered              
+#             bin <*,auto[idle]>                              0          1          3    ZERO                 
+#             bin <auto[idle],auto[s1]>                       0          1          1    ZERO                 
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],dout_1>                           2          1          -    Covered              
+#             bin <auto[s1],dout_0>                           1          1          -    Covered              
+#             bin <auto[s0],dout_0>                           5          1          -    Covered              
+#             bin <auto[idle],dout_0>                         1          1          -    Covered              
+#             bin <auto[s0],dout_1>                           0          1          1    ZERO                 
+#             bin <auto[idle],dout_1>                         0          1          1    ZERO                 
+# 
+# COVERGROUP COVERAGE:
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /tb/cg_fsm                                       91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#  Covergroup instance \/tb/fsm_cov                      91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin idle                                            1          1          -    Covered              
+#         bin s0                                              5          1          -    Covered              
+#         bin s1                                              3          1          -    Covered              
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin zero                                            5          1          -    Covered              
+#         bin one                                             5          1          -    Covered              
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin to_idle                                         1          1          -    Covered              
+#         bin to_s0                                           5          1          -    Covered              
+#         bin to_s1                                           4          1          -    Covered              
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin dout_0                                          8          1          -    Covered              
+#         bin dout_1                                          2          1          -    Covered              
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        4          1          -    Covered              
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],one>                              2          1          -    Covered              
+#             bin <auto[s0],one>                              3          1          -    Covered              
+#             bin <auto[s1],zero>                             1          1          -    Covered              
+#             bin <auto[s0],zero>                             2          1          -    Covered              
+#             bin <auto[idle],zero>                           1          1          -    Covered              
+#             bin <auto[idle],one>                            0          1          1    ZERO                 
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],auto[s1]>                         1          1          -    Covered              
+#             bin <auto[s0],auto[s1]>                         3          1          -    Covered              
+#             bin <auto[s1],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[s0],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[idle],auto[s0]>                       1          1          -    Covered              
+#             bin <*,auto[idle]>                              0          1          3    ZERO                 
+#             bin <auto[idle],auto[s1]>                       0          1          1    ZERO                 
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],dout_1>                           2          1          -    Covered              
+#             bin <auto[s1],dout_0>                           1          1          -    Covered              
+#             bin <auto[s0],dout_0>                           5          1          -    Covered              
+#             bin <auto[idle],dout_0>                         1          1          -    Covered              
+#             bin <auto[s0],dout_1>                           0          1          1    ZERO                 
+#             bin <auto[idle],dout_1>                         0          1          1    ZERO                 
+# 
+# TOTAL COVERGROUP COVERAGE: 91.41%  COVERGROUP TYPES: 1
+# 
+# Total Coverage By Instance (filtered view): 91.41%
+# 
+# End time: 18:45:24 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+quit -sim
+# End time: 18:46:37 on Oct 16,2025, Elapsed time: 0:01:23
+# Errors: 1, Warnings: 0
+if [file exists "work"] {vdel -all}
 vlib work
-vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/rtl/fsm.sv
+
+#Compile RTL
+vlog -cover bcest ../rtl/fsm.sv
 # QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:10:34 on Oct 16,2025
-# vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/rtl/fsm.sv 
+# Start time: 19:04:50 on Oct 16,2025
+# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
 # -- Compiling module fsm
 # 
 # Top level modules:
 # 	fsm
-# End time: 09:10:34 on Oct 16,2025, Elapsed time: 0:00:00
+# End time: 19:04:50 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/rtl/fsm.sv
+
+#Compile TB
+vlog ../tb/fsm_property.sv
 # QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:10:43 on Oct 16,2025
-# vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/rtl/fsm.sv 
-# -- Compiling module fsm
+# Start time: 19:04:50 on Oct 16,2025
+# vlog -reportprogress 300 ../tb/fsm_property.sv 
+# -- Compiling module fsm_property
 # 
 # Top level modules:
-# 	fsm
-# End time: 09:10:43 on Oct 16,2025, Elapsed time: 0:00:00
+# 	fsm_property
+# End time: 19:04:50 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv
+vlog ../tb/tb.sv
 # QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:10:56 on Oct 16,2025
-# vlog -reportprogress 300 -work work /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv 
+# Start time: 19:04:50 on Oct 16,2025
+# vlog -reportprogress 300 ../tb/tb.sv 
 # -- Compiling module tb
 # 
 # Top level modules:
 # 	tb
-# End time: 09:10:56 on Oct 16,2025, Elapsed time: 0:00:00
+# End time: 19:04:51 on Oct 16,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Load canceled
-vsim -voptargs=+acc work.tb
-# vsim -voptargs="+acc" work.tb 
-# Start time: 09:11:19 on Oct 16,2025
+
+vsim tb -coverage -do "wave.do"
+# vsim tb -coverage -do "wave.do" 
+# Start time: 19:04:51 on Oct 16,2025
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "fsm(fast)".
 # Loading sv_std.std
 # Loading work.tb(fast)
 # Loading work.fsm(fast)
-add wave -position insertpoint  \
-sim:/tb/dut/clk \
-sim:/tb/dut/rst \
-sim:/tb/dut/din \
-sim:/tb/dut/dout \
-sim:/tb/dut/state \
-sim:/tb/dut/next_state
+# Loading work.fsm_property(fast)
+# do wave.do
+set NoQuitOnFinish 1
+# 1
+onbreak {resume}
+#  Warning: onbreak command for use within macro
+log /* -r
 run -all
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv Line: 67
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv Line: 97
-# ** Note: $finish    : /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
+# Inicio de simulación
+# Time=5000 | rst=1 din=0 dout=0
+# ** Error: FSM no entra en 'idle' tras reset
+#    Time: 5 ns Started: 5 ns  Scope: tb.dut.fsm_bind_inst File: ../tb/fsm_property.sv Line: 16
+# Time=15000 | rst=0 din=0 dout=0
+# Time=25000 | rst=0 din=0 dout=0
+# Time=35000 | rst=0 din=1 dout=0
+# Time=45000 | rst=0 din=1 dout=1
+# Time=55000 | rst=0 din=0 dout=0
+# Time=65000 | rst=0 din=1 dout=0
+# Time=75000 | rst=0 din=0 dout=0
+# Time=85000 | rst=0 din=1 dout=1
+# Time=95000 | rst=0 din=1 dout=0
+# ** Note: $finish    : ../tb/tb.sv(69)
+#    Time: 105 ns  Iteration: 0  Instance: /tb
 # 1
-# Break in Module tb at /home/miguel/alemanmig_git/Verification-/FSM-Project/tb/tb.sv line 37
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/miguel/alemanmig_git/Verification-/FSM-Project/wave.do
-quit -sim
-# End time: 09:18:11 on Oct 16,2025, Elapsed time: 0:06:52
-# Errors: 3, Warnings: 0
-vsim do weve.do work.tb -voptargs=+acc -coverage
-# vsim do weve.do work.tb -voptargs="+acc" -coverage 
-# Start time: 09:20:19 on Oct 16,2025
-# ** Error (suppressible): (vsim-19) Failed to access library 'weve' at "weve".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# End time: 09:20:19 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Load canceled
-restart -f
-# No Design Loaded!
-vsim do weve.do work.tb -voptargs=+acc -coverage
-# vsim do weve.do work.tb -voptargs="+acc" -coverage 
-# Start time: 09:21:53 on Oct 16,2025
-# ** Error (suppressible): (vsim-19) Failed to access library 'weve' at "weve".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# End time: 09:21:53 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vsim -coverage work.tb
-# vsim do weve.do work.tb -coverage 
-# Start time: 09:22:05 on Oct 16,2025
-# ** Error (suppressible): (vsim-19) Failed to access library 'weve' at "weve".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# End time: 09:22:05 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vsim -voptargs=+acc work.tb
-# vsim do weve.do work.tb -voptargs="+acc" 
-# Start time: 09:22:09 on Oct 16,2025
-# ** Error (suppressible): (vsim-19) Failed to access library 'weve' at "weve".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# End time: 09:22:09 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# Load canceled
-vsim -voptargs=+acc work.tb
-# vsim do weve.do work.tb -voptargs="+acc" 
-# Start time: 09:22:51 on Oct 16,2025
-# ** Error (suppressible): (vsim-19) Failed to access library 'weve' at "weve".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# End time: 09:22:51 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vsim work.tb -voptargs=+acc
-# vsim work.tb -voptargs="+acc" 
-# Start time: 09:23:23 on Oct 16,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-quit -sim
-# End time: 09:23:41 on Oct 16,2025, Elapsed time: 0:00:18
-# Errors: 0, Warnings: 0
-# Optimization canceled
-vsim do work.tb
-# vsim do do work.tb 
-# Start time: 09:24:17 on Oct 16,2025
-# ** Fatal: (vsim-3369) Top-level design unit 'do' specified more than once.
-# FATAL ERROR while loading design
-# Error loading design
-# End time: 09:24:18 on Oct 16,2025, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 0
-vsim work.tb
-# vsim work.tb 
-# Start time: 09:24:39 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# OpenFile wave.do
-quit .sim
-# unknown switch: .sim
-ls
-# docs
-# dump.vcd
-# rtl
-# sim
-# tb
-# transcript
-# vsim.wlf
-# wave.do
-# work
-cd sim
-# Cannot change directory while a simulation is in progress.
-# Use the "quit -sim" command to unload the design first.
-ls
-# docs
-# dump.vcd
-# rtl
-# sim
-# tb
-# transcript
-# vsim.wlf
-# wave.do
-# work
-quit -sim
-# End time: 09:48:51 on Oct 16,2025, Elapsed time: 0:24:12
-# Errors: 0, Warnings: 0
-cd sim
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:48:57 on Oct 16,2025
-# vlog -reportprogress 300 ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:48:57 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# ** Error (suppressible): (vlog-1902) Option "--/tb/tb.sv" is not a valid option for this tool.
-# Use the -help option for complete vlog usage.
-# Errors: 1, Warnings: 0
-# ** Error: /tools/questasim/linux_x86_64/vlog failed.
-# Error in macro ./run.do line 8
-# /tools/questasim/linux_x86_64/vlog failed.
-#     while executing
-# "vlog --/tb/tb.sv"
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:50:44 on Oct 16,2025
-# vlog -reportprogress 300 - cover bcest ../rtl/fsm.sv 
-# ** Error: (vlog-7) Failed to open design unit file "cover" in read mode.
-# No such file or directory. (errno = ENOENT)
-# End time: 09:50:44 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /tools/questasim/linux_x86_64/vlog failed.
-# Error in macro ./run.do line 5
-# /tools/questasim/linux_x86_64/vlog failed.
-#     while executing
-# "vlog - cover bcest ../rtl/fsm.sv"
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:51:40 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:51:40 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:51:40 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:51:40 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# ** UI-Msg: (vish-3296) Unknown option '-comverage'.
-# Use the -help option for complete vsim usage.
-# ** Error: Error loading design
-# Error in macro ./run.do line 10
-# Error loading design
-#     while executing
-# "error "Error loading design""
-#     (procedure "vsim" line 158)
-#     invoked from within
-# "vsim tb -comverage"
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:52:09 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:52:09 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:52:09 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:52:09 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim tb -coverage 
-# Start time: 09:52:09 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
+# Break at ../tb/tb.sv line 69
+
+coverage save fsm.ucdb
+vcover report fsm.ucdb
 # QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:52:15 on Oct 16,2025
+# Start time: 19:04:56 on Oct 16,2025
 # vcover report fsm.ucdb 
 # Coverage Report Summary Data by instance
+# 
+# =================================================================================
+# === Instance: /tb/dut/fsm_bind_inst
+# === Design Unit: work.fsm_property
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Assertions                       5         4         1    80.00%
 # 
 # =================================================================================
 # === Instance: /tb/dut
@@ -282,8 +515,8 @@ do run.do
 #     Enabled Coverage              Bins      Hits    Misses  Coverage
 #     ----------------              ----      ----    ------  --------
 #     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
+#     Statements                      19        18         1    94.73%
+#     Toggles                         14        12         2    85.71%
 # 
 # =================================================================================
 # === Instance: /tb
@@ -291,415 +524,332 @@ do run.do
 # =================================================================================
 #     Enabled Coverage              Bins      Hits    Misses  Coverage
 #     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
+#     Covergroups                      1        na        na    91.41%
+#         Coverpoints/Crosses         11        na        na        na
+#             Covergroup Bins         43        36         7    83.72%
 # 
 # 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
+# TOTAL COVERGROUP COVERAGE: 91.41%  COVERGROUP TYPES: 1
 # 
-# Total Coverage By Instance (filtered view): 84.12%
+# TOTAL ASSERTION COVERAGE: 80.00%  ASSERTIONS: 5
 # 
-# End time: 09:52:15 on Oct 16,2025, Elapsed time: 0:00:00
+# Total Coverage By Instance (filtered view): 88.70%
+# 
+# End time: 19:04:56 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# ** Error: invalid command name "vcober"
-# Error in macro ./run.do line 18
-# invalid command name "vcober"
-#     while executing
-# "vcober report fsm.ucdb -cvg -details"
-quit -sim
-# End time: 09:52:40 on Oct 16,2025, Elapsed time: 0:00:31
-# Errors: 4, Warnings: 0
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:52:45 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:52:45 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:52:45 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:52:45 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim tb -coverage 
-# Start time: 09:52:45 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
+vcover report fsm.ucdb -cvg -details
 # QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:52:51 on Oct 16,2025
-# vcover report fsm.ucdb 
-# Coverage Report Summary Data by instance
-# 
-# =================================================================================
-# === Instance: /tb/dut
-# === Design Unit: work.fsm
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
-# 
-# =================================================================================
-# === Instance: /tb
-# === Design Unit: work.tb
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
-# 
-# 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
-# 
-# Total Coverage By Instance (filtered view): 84.12%
-# 
-# End time: 09:52:51 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:52:51 on Oct 16,2025
+# Start time: 19:04:56 on Oct 16,2025
 # vcover report fsm.ucdb -cvg -details 
-# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
-# End time: 09:52:51 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-quit -sim
-# End time: 09:53:23 on Oct 16,2025, Elapsed time: 0:00:38
-# Errors: 3, Warnings: 0
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:54:28 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:54:28 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:54:29 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:54:29 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim tb -coverage -do "wave.do" 
-# Start time: 09:54:29 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# wave.do
-# invalid command name "wave.do"
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:54:34 on Oct 16,2025
-# vcover report fsm.ucdb 
-# Coverage Report Summary Data by instance
-# 
-# =================================================================================
-# === Instance: /tb/dut
-# === Design Unit: work.fsm
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
+# Coverage Report by instance with details
 # 
 # =================================================================================
 # === Instance: /tb
 # === Design Unit: work.tb
 # =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
 # 
+# Covergroup Coverage:
+#     Covergroups                      1        na        na    91.41%
+#         Coverpoints/Crosses         11        na        na        na
+#             Covergroup Bins         43        36         7    83.72%
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /tb/cg_fsm                                       91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#  Covergroup instance \/tb/fsm_cov                      91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin idle                                            1          1          -    Covered              
+#         bin s0                                              5          1          -    Covered              
+#         bin s1                                              3          1          -    Covered              
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin zero                                            5          1          -    Covered              
+#         bin one                                             5          1          -    Covered              
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin to_idle                                         1          1          -    Covered              
+#         bin to_s0                                           5          1          -    Covered              
+#         bin to_s1                                           4          1          -    Covered              
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin dout_0                                          8          1          -    Covered              
+#         bin dout_1                                          2          1          -    Covered              
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        4          1          -    Covered              
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],one>                              2          1          -    Covered              
+#             bin <auto[s0],one>                              3          1          -    Covered              
+#             bin <auto[s1],zero>                             1          1          -    Covered              
+#             bin <auto[s0],zero>                             2          1          -    Covered              
+#             bin <auto[idle],zero>                           1          1          -    Covered              
+#             bin <auto[idle],one>                            0          1          1    ZERO                 
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],auto[s1]>                         1          1          -    Covered              
+#             bin <auto[s0],auto[s1]>                         3          1          -    Covered              
+#             bin <auto[s1],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[s0],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[idle],auto[s0]>                       1          1          -    Covered              
+#             bin <*,auto[idle]>                              0          1          3    ZERO                 
+#             bin <auto[idle],auto[s1]>                       0          1          1    ZERO                 
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],dout_1>                           2          1          -    Covered              
+#             bin <auto[s1],dout_0>                           1          1          -    Covered              
+#             bin <auto[s0],dout_0>                           5          1          -    Covered              
+#             bin <auto[idle],dout_0>                         1          1          -    Covered              
+#             bin <auto[s0],dout_1>                           0          1          1    ZERO                 
+#             bin <auto[idle],dout_1>                         0          1          1    ZERO                 
 # 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
+# COVERGROUP COVERAGE:
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /tb/cg_fsm                                       91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#  Covergroup instance \/tb/fsm_cov                      91.41%        100          -    Uncovered            
+#     covered/total bins:                                    36         43          -                      
+#     missing/total bins:                                     7         43          -                      
+#     % Hit:                                             83.72%        100          -                      
+#     Coverpoint #coverpoint__0#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin idle                                            1          1          -    Covered              
+#         bin s0                                              5          1          -    Covered              
+#         bin s1                                              3          1          -    Covered              
+#     Coverpoint din                                    100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin zero                                            5          1          -    Covered              
+#         bin one                                             5          1          -    Covered              
+#     Coverpoint #coverpoint__1#                        100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin to_idle                                         1          1          -    Covered              
+#         bin to_s0                                           5          1          -    Covered              
+#         bin to_s1                                           4          1          -    Covered              
+#     Coverpoint dout                                   100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin dout_0                                          8          1          -    Covered              
+#         bin dout_1                                          2          1          -    Covered              
+#     Coverpoint #dut.state__2#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.state__3#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Coverpoint #dut.next_state__4#                    100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        4          1          -    Covered              
+#     Coverpoint #dut.state__5#                         100.00%        100          -    Covered              
+#         covered/total bins:                                 3          3          -                      
+#         missing/total bins:                                 0          3          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin auto[idle]                                      1          1          -    Covered              
+#         bin auto[s0]                                        5          1          -    Covered              
+#         bin auto[s1]                                        3          1          -    Covered              
+#     Cross #cross__0#                                   83.33%        100          -    Uncovered            
+#         covered/total bins:                                 5          6          -                      
+#         missing/total bins:                                 1          6          -                      
+#         % Hit:                                         83.33%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],one>                              2          1          -    Covered              
+#             bin <auto[s0],one>                              3          1          -    Covered              
+#             bin <auto[s1],zero>                             1          1          -    Covered              
+#             bin <auto[s0],zero>                             2          1          -    Covered              
+#             bin <auto[idle],zero>                           1          1          -    Covered              
+#             bin <auto[idle],one>                            0          1          1    ZERO                 
+#     Cross #cross__1#                                   55.55%        100          -    Uncovered            
+#         covered/total bins:                                 5          9          -                      
+#         missing/total bins:                                 4          9          -                      
+#         % Hit:                                         55.55%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],auto[s1]>                         1          1          -    Covered              
+#             bin <auto[s0],auto[s1]>                         3          1          -    Covered              
+#             bin <auto[s1],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[s0],auto[s0]>                         2          1          -    Covered              
+#             bin <auto[idle],auto[s0]>                       1          1          -    Covered              
+#             bin <*,auto[idle]>                              0          1          3    ZERO                 
+#             bin <auto[idle],auto[s1]>                       0          1          1    ZERO                 
+#     Cross #cross__2#                                   66.66%        100          -    Uncovered            
+#         covered/total bins:                                 4          6          -                      
+#         missing/total bins:                                 2          6          -                      
+#         % Hit:                                         66.66%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <auto[s1],dout_1>                           2          1          -    Covered              
+#             bin <auto[s1],dout_0>                           1          1          -    Covered              
+#             bin <auto[s0],dout_0>                           5          1          -    Covered              
+#             bin <auto[idle],dout_0>                         1          1          -    Covered              
+#             bin <auto[s0],dout_1>                           0          1          1    ZERO                 
+#             bin <auto[idle],dout_1>                         0          1          1    ZERO                 
 # 
-# Total Coverage By Instance (filtered view): 84.12%
+# TOTAL COVERGROUP COVERAGE: 91.41%  COVERGROUP TYPES: 1
 # 
-# End time: 09:54:34 on Oct 16,2025, Elapsed time: 0:00:00
+# Total Coverage By Instance (filtered view): 91.41%
+# 
+# End time: 19:04:56 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:54:34 on Oct 16,2025
-# vcover report fsm.ucdb -cvg -details 
-# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
-# End time: 09:54:34 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-do run.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is miguel@miguel-MacBookPro.
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:55:04 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:55:04 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:55:04 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:55:04 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 09:55:08 on Oct 16,2025, Elapsed time: 0:00:39
-# Errors: 3, Warnings: 0
-# vsim tb -coverage -do "wave.do" 
-# Start time: 09:55:08 on Oct 16,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# do wave.do
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:55:13 on Oct 16,2025
-# vcover report fsm.ucdb 
-# Coverage Report Summary Data by instance
-# 
-# =================================================================================
-# === Instance: /tb/dut
-# === Design Unit: work.fsm
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
-# 
-# =================================================================================
-# === Instance: /tb
-# === Design Unit: work.tb
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
-# 
-# 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
-# 
-# Total Coverage By Instance (filtered view): 84.12%
-# 
-# End time: 09:55:13 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:55:13 on Oct 16,2025
-# vcover report fsm.ucdb -cvg -details 
-# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
-# End time: 09:55:13 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-quit .sim
-# unknown switch: .sim
-quit -sim
-# End time: 09:55:25 on Oct 16,2025, Elapsed time: 0:00:17
-# Errors: 3, Warnings: 0
-do wave.do
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:55:35 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 09:55:35 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 09:55:35 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 09:55:35 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim tb -coverage -do "wave.do" 
-# Start time: 09:55:35 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# do wave.do
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:55:41 on Oct 16,2025
-# vcover report fsm.ucdb 
-# Coverage Report Summary Data by instance
-# 
-# =================================================================================
-# === Instance: /tb/dut
-# === Design Unit: work.fsm
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
-# 
-# =================================================================================
-# === Instance: /tb
-# === Design Unit: work.tb
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
-# 
-# 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
-# 
-# Total Coverage By Instance (filtered view): 84.12%
-# 
-# End time: 09:55:41 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 09:55:41 on Oct 16,2025
-# vcover report fsm.ucdb -cvg -details 
-# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
-# End time: 09:55:41 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-quit -sim
-# End time: 10:37:26 on Oct 16,2025, Elapsed time: 0:41:51
-# Errors: 3, Warnings: 0
-cd sim
-# couldn't change working directory to "sim": no such file or directory
-ls
-# dump.vcd
-# fsm.ucdb
-# run.do
-# vsim.wlf
-# wave.do
-# work
-pwd
-# /home/miguel/alemanmig_git/Verification-/FSM-Project/sim
-do run.do
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 10:37:42 on Oct 16,2025
-# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
-# -- Compiling module fsm
-# 
-# Top level modules:
-# 	fsm
-# End time: 10:37:42 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
-# Start time: 10:37:42 on Oct 16,2025
-# vlog -reportprogress 300 ../tb/tb.sv 
-# -- Compiling module tb
-# 
-# Top level modules:
-# 	tb
-# End time: 10:37:42 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim tb -coverage -do "wave.do" 
-# Start time: 10:37:42 on Oct 16,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.tb(fast)
-# Loading work.fsm(fast)
-# do wave.do
-# 1
-# ** Error: Assertion error.
-#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
-# ** Error: Assertion error.
-#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
-# ** Note: $finish    : ../tb/tb.sv(37)
-#    Time: 180 ns  Iteration: 0  Instance: /tb
-# 1
-# Break at ../tb/tb.sv line 37
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 10:37:48 on Oct 16,2025
-# vcover report fsm.ucdb 
-# Coverage Report Summary Data by instance
-# 
-# =================================================================================
-# === Instance: /tb/dut
-# === Design Unit: work.fsm
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Branches                        12        11         1    91.66%
-#     Statements                      19        17         2    89.47%
-#     Toggles                         14        13         1    92.85%
-# 
-# =================================================================================
-# === Instance: /tb
-# === Design Unit: work.tb
-# =================================================================================
-#     Enabled Coverage              Bins      Hits    Misses  Coverage
-#     ----------------              ----      ----    ------  --------
-#     Assertions                       8         5         3    62.50%
-# 
-# 
-# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
-# 
-# Total Coverage By Instance (filtered view): 84.12%
-# 
-# End time: 10:37:48 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
-# Start time: 10:37:48 on Oct 16,2025
-# vcover report fsm.ucdb -cvg -details 
-# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
-# End time: 10:37:48 on Oct 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 10:54:56 on Oct 16,2025, Elapsed time: 0:17:14
-# Errors: 3, Warnings: 0
+quit 
+
+# End time: 19:15:25 on Oct 16,2025, Elapsed time: 0:10:34
+# Errors: 1, Warnings: 0

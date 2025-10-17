@@ -11,61 +11,85 @@ z2
 cModel Technology
 Z0 d/home/miguel/alemanmig_git/Verification-/FSM-Project/sim
 T_opt
-!s110 1760632663
-Ve9VU^l=I9?_6RNU9BzUhG0
+Z1 !s110 1760663091
+VUhYa0NNk^FV4Rl5Q]Gzkg3
 04 2 4 work tb fast 0
-=1-000ae431a4f1-68f11f56-e42c9-34e4
+=1-000ae431a4f1-68f19633-2d5f2-4c46
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.2_1;73
 vfsm
-Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1760632662
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1760663090
 !i10b 1
 !s100 Ne:V8KTCS4W_?c0hh3j=d2
 I?3Vnh]z]m8iT^Kj8WW<z:2
 S1
 R0
-w1760627167
+w1760661728
 8../rtl/fsm.sv
 F../rtl/fsm.sv
 !i122 0
 L0 8 74
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2021.2_1;73
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.2_1;73
 r1
 !s85 0
 31
-Z6 !s108 1760632662.000000
+Z7 !s108 1760663090.000000
 !s107 ../rtl/fsm.sv|
 !s90 -reportprogress|300|-cover|bcest|../rtl/fsm.sv|
 !i113 0
 !s102 -cover bcest
 o-cover bcest -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
-vtb
 R2
+vfsm_property
 R3
+R4
 !i10b 1
-!s100 Ec@1=h[]CSnaG7lhUBfJM3
-IUT8Ak@=P;OMo58MMMK8_i1
+!s100 d`hIE:XgPgizJzRE7Tci[3
+Ihf3_Jhd06Xld>aS<NNT5V2
 S1
 R0
-w1760627213
-8../tb/tb.sv
-F../tb/tb.sv
+w1760661414
+8../tb/fsm_property.sv
+F../tb/fsm_property.sv
 !i122 1
-L0 8 111
-R4
+L0 6 41
 R5
+R6
 r1
 !s85 0
 31
+R7
+!s107 ../tb/fsm_property.sv|
+!s90 -reportprogress|300|../tb/fsm_property.sv|
+!i113 0
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtb
+R3
+R1
+!i10b 1
+!s100 kh04Mg7N4ZA;aEC_]YSIU2
+I^B3jaX]mihETC?1h>a9:@1
+S1
+R0
+w1760661875
+8../tb/tb.sv
+F../tb/tb.sv
+!i122 2
+L0 11 123
+R5
 R6
+r1
+!s85 0
+31
+R7
 !s107 ../tb/tb.sv|
 !s90 -reportprogress|300|../tb/tb.sv|
 !i113 0
-o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R8
+R2
