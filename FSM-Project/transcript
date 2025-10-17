@@ -614,3 +614,92 @@ do run.do
 # ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
 # End time: 09:55:41 on Oct 16,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+quit -sim
+# End time: 10:37:26 on Oct 16,2025, Elapsed time: 0:41:51
+# Errors: 3, Warnings: 0
+cd sim
+# couldn't change working directory to "sim": no such file or directory
+ls
+# dump.vcd
+# fsm.ucdb
+# run.do
+# vsim.wlf
+# wave.do
+# work
+pwd
+# /home/miguel/alemanmig_git/Verification-/FSM-Project/sim
+do run.do
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 10:37:42 on Oct 16,2025
+# vlog -reportprogress 300 -cover bcest ../rtl/fsm.sv 
+# -- Compiling module fsm
+# 
+# Top level modules:
+# 	fsm
+# End time: 10:37:42 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+# Start time: 10:37:42 on Oct 16,2025
+# vlog -reportprogress 300 ../tb/tb.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 10:37:42 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim tb -coverage -do "wave.do" 
+# Start time: 10:37:42 on Oct 16,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.fsm(fast)
+# do wave.do
+# 1
+# ** Error: Assertion error.
+#    Time: 5 ns Started: 5 ns  Scope: tb.state_encoding File: ../tb/tb.sv Line: 43
+# ** Error: Assertion error.
+#    Time: 85 ns Started: 75 ns  Scope: tb.state_din File: ../tb/tb.sv Line: 97
+# ** Error: Assertion error.
+#    Time: 85 ns Started: 75 ns  Scope: tb.state_din_high File: ../tb/tb.sv Line: 67
+# ** Note: $finish    : ../tb/tb.sv(37)
+#    Time: 180 ns  Iteration: 0  Instance: /tb
+# 1
+# Break at ../tb/tb.sv line 37
+# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
+# Start time: 10:37:48 on Oct 16,2025
+# vcover report fsm.ucdb 
+# Coverage Report Summary Data by instance
+# 
+# =================================================================================
+# === Instance: /tb/dut
+# === Design Unit: work.fsm
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Branches                        12        11         1    91.66%
+#     Statements                      19        17         2    89.47%
+#     Toggles                         14        13         1    92.85%
+# 
+# =================================================================================
+# === Instance: /tb
+# === Design Unit: work.tb
+# =================================================================================
+#     Enabled Coverage              Bins      Hits    Misses  Coverage
+#     ----------------              ----      ----    ------  --------
+#     Assertions                       8         5         3    62.50%
+# 
+# 
+# TOTAL ASSERTION COVERAGE: 62.50%  ASSERTIONS: 8
+# 
+# Total Coverage By Instance (filtered view): 84.12%
+# 
+# End time: 10:37:48 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcover 2021.2_1 Coverage Utility 2021.05 May 15 2021
+# Start time: 10:37:48 on Oct 16,2025
+# vcover report fsm.ucdb -cvg -details 
+# ** Note: (vcover-17388) No matching coverage data found in file 'fsm.ucdb'.
+# End time: 10:37:48 on Oct 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 10:54:56 on Oct 16,2025, Elapsed time: 0:17:14
+# Errors: 3, Warnings: 0

@@ -11,10 +11,10 @@ z2
 cModel Technology
 Z0 d/home/miguel/alemanmig_git/Verification-/FSM-Project/sim
 T_opt
-!s110 1760630136
-Vc=6nDgVdK3m7nmaj1G5KV3
+!s110 1760632663
+Ve9VU^l=I9?_6RNU9BzUhG0
 04 2 4 work tb fast 0
-=1-000ae431a4f1-68f11578-9d78-32d2
+=1-000ae431a4f1-68f11f56-e42c9-34e4
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
@@ -22,7 +22,7 @@ n@_opt
 OL;O;2021.2_1;73
 vfsm
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1760630135
+Z3 !s110 1760632662
 !i10b 1
 !s100 Ne:V8KTCS4W_?c0hh3j=d2
 I?3Vnh]z]m8iT^Kj8WW<z:2
@@ -38,7 +38,7 @@ Z5 OL;L;2021.2_1;73
 r1
 !s85 0
 31
-Z6 !s108 1760630135.000000
+Z6 !s108 1760632662.000000
 !s107 ../rtl/fsm.sv|
 !s90 -reportprogress|300|-cover|bcest|../rtl/fsm.sv|
 !i113 0

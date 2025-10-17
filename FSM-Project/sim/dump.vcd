@@ -1,0 +1,164 @@
+$date
+	Thu Oct 16 10:37:48 2025
+$end
+$version
+	QuestaSim Version 2021.2_1
+$end
+$timescale
+	1ns
+$end
+
+$scope module tb $end
+
+$scope begin state_encoding $end
+$upscope $end
+
+$scope begin state_rst_high $end
+$upscope $end
+
+$scope begin state_thr_rst_high $end
+$upscope $end
+
+$scope begin state_din_high $end
+$upscope $end
+
+$scope begin state_din_low $end
+$upscope $end
+
+$scope begin state_din $end
+$upscope $end
+
+$scope module dut $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 # din $end
+$var reg 1 $ dout $end
+$var reg 3 % state [2:0] $end
+$var reg 3 & next_state [2:0] $end
+$upscope $end
+$upscope $end
+
+$scope begin std $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+bx %
+b1 &
+0#
+0"
+0!
+$end
+#3
+1"
+#5
+1!
+b1 %
+#10
+0!
+#15
+1!
+#20
+0!
+#25
+1!
+#30
+0!
+#33
+0"
+1#
+b10 &
+#35
+1!
+b10 %
+b1 &
+b100 &
+#40
+0!
+#45
+1!
+b100 %
+b1 &
+b10 &
+1$
+#50
+0!
+#55
+1!
+b10 %
+b1 &
+0$
+b100 &
+#60
+0!
+#65
+1!
+b100 %
+b1 &
+b10 &
+1$
+#70
+0!
+#75
+1!
+b10 %
+b1 &
+0$
+b100 &
+#78
+0#
+b1 &
+b10 &
+#80
+0!
+#85
+1!
+#90
+0!
+#95
+1!
+#100
+0!
+#103
+1"
+b1 &
+b10 &
+#105
+1!
+b1 %
+b1 &
+#110
+0!
+#115
+1!
+#120
+0!
+#125
+1!
+#130
+0!
+#135
+1!
+#140
+0!
+#143
+0"
+b10 &
+#145
+1!
+b10 %
+b1 &
+b10 &
+#150
+0!
+#155
+1!
+#160
+0!
+#165
+1!
+#170
+0!
+#175
+1!
