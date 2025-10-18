@@ -1,0 +1,4 @@
+BEGIN 1:fsm:fast:work
+    next_state :  1:tb:fast:work 1:fsm_property:fast:work
+    state :  1:tb:fast:work 1:fsm_property:fast:work
+END 

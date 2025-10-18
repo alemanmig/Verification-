@@ -124,10 +124,5 @@ module tb;
   // Instancia del covergroup
   cg_fsm fsm_cov = new();
     
-  initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars;
-    $assertvacuousoff(0); 
-  end
 
 endmodule
