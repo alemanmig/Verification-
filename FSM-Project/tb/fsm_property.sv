@@ -44,3 +44,8 @@ module fsm_property(pclk,prst,pdin,pdout);
     else $error("FSM no transita de 's0' a 's1' con 'din == 1'");
     
   endmodule
+
+  
+  `ifdef FORMAL
+    bind fsm fsm_property fsm_bind (.pclk(clk), .prst(rst), .pdin(din), .pdout(dout));
+  `endif

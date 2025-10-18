@@ -1,0 +1,18 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+-timescale
+1ns/1ps
+-access
++rwc
++define+XCELIUM
+../rtl/fsm.sv
+../tb/tb.sv
+../tb/fsm_property.sv
+-top
+tb
+-l
+./logs/sim.log

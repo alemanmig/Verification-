@@ -1,0 +1,3 @@
+SOFTINCLUDE /usr/local/cadence/installs/XCELIUM2409/tools/inca/files/cds.lib
+include ../../../../../../../../../usr/local/TSMC/GDK45/gpdk045_v_6_0/cds.lib
+define worklib ../worklib

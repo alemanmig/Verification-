@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.24.09.d
+-RUNMODE
+-sv
+-DEFINE
+XCELIUM
+../rtl/fsm.sv
+../tb/tb.sv
+../tb/fsm_property.sv
+-CDSLIB
+./xcelium.d/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.24.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.24.09.d/xllibs
+-ALLOWUNBOUND
+-hastop
