@@ -1,9 +1,9 @@
-- [Assertions en SystmeVerilog](#assertions-en-systmeverilog)
+- [Assertions en SystemVerilog](#assertions-en-systemverilog)
   - [Properties en un diseño](#properties-en-un-diseño)
   - [¿Assertions?](#assertions)
 
 
-# Assertions en SystmeVerilog
+# Assertions en SystemVerilog
 
 > Esta guía resume el uso de assertions para validar propiedades funcionales y temporales en diseños digitales. Incluye ejemplos, buenas prácticas y comparaciones con checkers tradicionales.
 >
@@ -11,11 +11,14 @@
 
 Una *assertion* es una afirmación que debe mantenerse verdadera durante la simulación. Si se viola, indica que el diseño no cumple con una propiedad deseada.
 
+Por ejemplo, la siguiente *assertion*
+
 ```systemverilog
 assert property(@(posedge clk) a && b);
 
+indica que, en cada flanco positivo del reloj (clk), las señales a y b deben tener un valor lógico verdadero, o ser diferentes de cero. De lo contrario, la *assertion* fallará.
 
-El comportamiento de un sistema puede expresarse como una afirmación que debe ser verdadera en todo momento. Por lo tanto, las afirmaciones se utilizan para validar el comportamiento de un sistema definido como propiedades, y también pueden emplearse en la cobertura funcional.
+El comportamiento de un sistema puede expresarse como una afirmación que debe ser verdadera en todo momento. Por lo tanto, las afirmaciones se utilizan para validar el comportamiento de un sistema definido a través de propiedades, y también pueden emplearse en la cobertura funcional.
 
 ## Properties en un diseño
 
@@ -23,15 +26,15 @@ Si una propiedad del diseño que se verifica mediante una aserción no se compor
 
 Si se prohíbe que se cumpla una propiedad del diseño que se verifica mediante una aserción, esta falla. Por ejemplo, supongamos que un procesador pequeño decodifica instrucciones leídas de la memoria, encuentra una instrucción desconocida y genera un error fatal. Si el diseño no prevé tal escenario, se viola la propiedad del diseño de que solo se pueden leer instrucciones válidas de la memoria y la aserción falla.
 
-Como es evidente en los dos ejemplos anteriores, las propiedades de un diseño determinado se comprueban escribiendo afirmaciones SystemVerilog.
+Como es evidente en los dos ejemplos anteriores, las propiedades de un diseño determinado se comprueban escribiendo afirmaciones en SystemVerilog.
 
 ## ¿Assertions?
 
 Podemos considerar una aserción como una representación más concisa de un Checker funcional. La funcionalidad representada por una aserción también puede escribirse como una `task` o un `Checker` de SystemVerilog que implica más líneas de código. Algunas desventajas de esto se enumeran a continuación:
 
-- SystemVerilog es un código extenso y difícil de mantener y escalar con la cantidad de propiedades.
-- Al ser un lenguaje procedimental, es difícil escribir 
-- `Chekers` que involucren muchos eventos paralelos en el mismo período de tiempo.
+- SystemVerilog es un lenguaje extenso y difícil de mantener y escalar con la cantidad de propiedades.
+- Al ser un lenguaje procedimental, es difícil escribir
+- `Checkers` que involucren muchos eventos paralelos en el mismo período de tiempo.
 
 SystemVerilog Assertions es un lenguaje declarativo utilizado para especificar condiciones temporales, es muy conciso y más fácil de mantener.
 
