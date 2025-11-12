@@ -18,7 +18,15 @@ Las **aserciones** son instrucciones que permiten verificar si el comportamiento
 
 ## 1.1. Tipos de aserciones
 
+En SystemVerilog existen dos tipos principales de aserciones:
+
+- Aserciones inmediatas (`immediate assertions`)
+- Aserciones concurrentes (`concurrent assertions`)
+
+
 ### 🔹 Aserciones inmediatas (`immediate assertions`)
+
+Las aserciones inmediatas se ejecutan como instrucciones dentro de bloques procedimentales (`always`, `initial`, etc.) y siguen la semántica de eventos de simulación. Esto significa que se evalúan en el momento exacto en que ocurre un cambio en las señales involucradas.
 
 - Se ejecutan como instrucciones dentro de bloques procedimentales (`always`, `initial`).
 - Siguen la **semántica de eventos**: se evalúan en el instante en que ocurre un cambio.
@@ -39,11 +47,14 @@ end
 
 ** 🔹 Aserciones concurrentes (concurrent assertions)
 
-- Se basan en la semántica de reloj: evalúan propiedades temporales sincronizadas con clk.
+- Se basan en la semántica de reloj: evalúan propiedades temporales sincronizadas con `clk`.
 - Utilizan sequence y property.
 - Compatibles con simulación y verificación formal.
 - Permiten describir comportamientos secuenciales.
-- 
+  
+Uno de los objetivos de SystemVerilog es ofrecer una semántica común que permita usar estas aserciones en distintas herramientas de diseño y verificación. Por ejemplo, las herramientas de verificación formal analizan el circuito usando una semántica basada en ciclos, donde los eventos entre flancos de reloj se simplifican o se abstraen.
+Las aserciones concurrentes están diseñadas para adaptarse a esta forma de evaluación, lo que facilita el análisis formal. Sin embargo, en algunos casos, esta abstracción puede generar diferencias respecto a la evaluación tradicional basada en eventos.
+
 **Sintaxis:**
 ```systemverilog
 
@@ -57,8 +68,10 @@ endproperty
 
 assert property (nombre_propiedad)
   else $error("mensaje de error");
+  ```
 
-  Ejemplo:
+**Ejemplo:**
+```systemverilog
 
 sequence req_ack;
   req ##1 ack;
