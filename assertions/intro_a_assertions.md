@@ -76,7 +76,7 @@ assert property (nombre_propiedad)
 sequence req_ack;
   req ##1 ack;
 endsequence
-
+}
 property p_req_ack;
   @(posedge clk) disable iff (reset) req_ack;
 endproperty
