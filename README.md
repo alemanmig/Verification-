@@ -1,7 +1,11 @@
 # Verificación de Sistemas Digitales
 
 ##  Introducción
-La verificación de sistemas digitales es un proceso fundamental para asegurar que un diseño implementado cumple con la intención definida en su especificación. Con el incremento en la complejidad del hardware moderno, la verificación ha evolucionado hacia metodologías avanzadas y métricas sólidas que permiten validar el comportamiento de los sistemas de forma sistemática y eficiente.
+La verificación de sistemas digitales es un proceso fundamental para asegurar que un diseño implementado cumple con la intención definida en su especificación. No se trata de ejecutar un testbench ni de generar un conjunto de pruebas aisladas; la verificación es un proceso integral, continuo y sistemático que busca validar que el comportamiento del diseño —desde los bloques RTL hasta sistemas completos— corresponde fielmente a lo que se pretende construir.
+
+La verificación no es exclusiva del ámbito digital: todos realizamos actividades de verificación a diario. Cuando revisamos que un pago bancario coincida con nuestro registro, probamos una receta mientras la cocinamos, o comprobamos que una ruta coincide con un mapa, estamos verificando que el resultado concuerda con una intención o expectativa previa. **En diseño digital, ese principio se formaliza y se vuelve crítico.**
+
+Con el incremento en la complejidad del hardware moderno, la verificación ha evolucionado hacia metodologías avanzadas y métricas sólidas que permiten validar el comportamiento de los sistemas de forma sistemática y eficiente.
 
 Este documento explica:
 - Qué es la verificación.
@@ -27,6 +31,15 @@ Actividades comunes en verificación:
 
 ##  2. ¿Qué es un Testbench?
 Un **testbench** es un entorno de simulación que genera estímulos y observa respuestas del DUT (*Device Under Test*). Aunque esencial, un testbench **no es equivalente a la verificación**, sino una herramienta dentro del proceso.
+
+En términos prácticos, un testbench:
+
+- Genera secuencias de estímulos (ya sean dirigidos, aleatorios o basados en transacciones).
+- Recibe y analiza las respuestas del DUT.
+- Puede integrar archivos externos, modelos de referencia (scoreboards), interfaces, drivers y monitores.
+- Se implementa comúnmente en SystemVerilog, aunque puede incluir código en C/C++, Python o herramientas de generación de estímulos.
+
+Los testbenches modernos, especialmente bajo la metodología UVM (Universal Verification Methodology), son altamente estructurados y orientados a la reutilización. Sin embargo, el testbench sigue siendo solo un instrumento dentro de un conjunto mucho más amplio de actividades de verificación.
 
 ### Componentes típicos de un testbench moderno
 - **Driver:** envía transacciones al DUT.
