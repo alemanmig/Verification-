@@ -39,7 +39,7 @@ assert (expresión) else $error("mensaje de error");
 ```
 
 **Ejemplo:**
-```
+```systemverilog
 always_ff @(posedge clk) begin
   enable <= 1;
   assert (enable) else $error("La señal enable no está activa");
