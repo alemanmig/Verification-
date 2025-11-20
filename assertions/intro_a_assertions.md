@@ -6,7 +6,7 @@ Esta guía presenta los fundamentos de las aserciones en SystemVerilog, incluyen
 
 ---
 
-## 1️.0. ¿Qué son las aserciones?
+## 1️1.0. ¿Qué son las aserciones?
 
 Las **aserciones** son instrucciones que permiten verificar si el comportamiento de un sistema digital es el esperado. Se utilizan principalmente para:
 
@@ -24,7 +24,7 @@ En SystemVerilog existen dos tipos principales de aserciones:
 - Aserciones concurrentes (`concurrent assertions`)
 
 
-### 🔹 Aserciones inmediatas (`immediate assertions`)
+### 1.1.0 Aserciones inmediatas (`immediate assertions`)
 
 Las aserciones inmediatas se ejecutan como instrucciones dentro de bloques procedimentales (`always`, `initial`, etc.) y siguen la semántica de eventos de simulación. Esto significa que se evalúan en el momento exacto en que ocurre un cambio en las señales involucradas.
 
@@ -36,16 +36,17 @@ Las aserciones inmediatas se ejecutan como instrucciones dentro de bloques proce
 **Sintaxis:**
 ```systemverilog
 assert (expresión) else $error("mensaje de error");
+```
 
-Ejemplo:
-
+**Ejemplo:**
+```
 always_ff @(posedge clk) begin
   enable <= 1;
   assert (enable) else $error("La señal enable no está activa");
 end
 ```
 
-** 🔹 Aserciones concurrentes (concurrent assertions)
+### 1.1.1 Aserciones concurrentes (`concurrent assertions`)
 
 - Se basan en la semántica de reloj: evalúan propiedades temporales sincronizadas con `clk`.
 - Utilizan sequence y property.
