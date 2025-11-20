@@ -88,7 +88,7 @@ El siguiente diagrama resume el orden general de ejecución de regiones:
 
 ```
                  +---------------------------+
-                 |     REGIÓN POSTPONED     |
+                 |     REGIÓN POSTPONED      |
                  +---------------------------+
                  |        REGIÓN RE-NBA      |
                  +---------------------------+
